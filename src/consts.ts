@@ -25,8 +25,12 @@ export const SITE = {
 } as const;
 
 /** Icons bundled with the theme — see `src/components/SocialLinks.astro`. */
-export type SocialIcon = 'github' | 'x' | 'linkedin' | 'rss' | 'email';
+export type SocialIcon = 'github' | 'x' | 'linkedin' | 'instagram' | 'email';
 
+export const SOCIAL_LINKS: readonly SocialLink[] = [
+  { label: 'GitHub', href: 'https://github.com/malaver051', icon: 'github' },
+  { label: 'Instagram', href: 'https://instagram.com/julianvalw', icon: 'instagram' },
+];
 export interface SocialLink {
   /** Accessible name announced on the icon-only link. */
   label: string;
@@ -34,13 +38,6 @@ export interface SocialLink {
   href: string;
   icon: SocialIcon;
 }
-
-/** Social profiles rendered as inline SVG icons in the footer.
- *  Add or remove entries here — no template edits needed. */
-export const SOCIAL_LINKS: readonly SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com/kpab/astro-keel', icon: 'github' },
-  { label: 'RSS feed', href: '/rss.xml', icon: 'rss' },
-];
 
 /** Giscus — GitHub Discussions-backed comments on blog posts.
  *  See `GISCUS` below; values come from https://giscus.app. */
@@ -104,9 +101,7 @@ export type NavItem =
  *  localize through the UI dictionary; give a page you add yourself a literal
  *  `label` instead — one of the two is required. */
 export const NAV_ITEMS: readonly NavItem[] = [
-  { href: '/', labelKey: 'nav.home' },
-  { href: '/about/', labelKey: 'nav.about' },
-  { href: '/works/', labelKey: 'nav.works' },
-  { href: '/blog/', labelKey: 'nav.blog' },
-  { href: '/search/', labelKey: 'nav.search' },
+  { href: '/', label: 'Presentación' },
+  { href: '/evidencias/', label: 'Evidencias' },
+  { href: '/works/', label: 'Proyectos' },
 ];

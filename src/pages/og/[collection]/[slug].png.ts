@@ -17,26 +17,15 @@ interface OgProps {
 }
 
 export const getStaticPaths = (async () => {
-  const blog = await getCollection('blog', ({ data }) => !data.draft);
   const works = await getCollection('works');
-  return [
-    ...blog.map((entry) => ({
-      params: { collection: 'blog', slug: entry.id },
-      props: {
-        title: entry.data.title,
-        description: entry.data.description,
-        kind: 'Blog',
-      } satisfies OgProps,
-    })),
-    ...works.map((entry) => ({
-      params: { collection: 'works', slug: entry.id },
-      props: {
-        title: entry.data.title,
-        description: entry.data.description,
-        kind: 'Work',
-      } satisfies OgProps,
-    })),
-  ];
+  return works.map((entry) => ({
+    params: { collection: 'works', slug: entry.id },
+    props: {
+      title: entry.data.title,
+      description: entry.data.description,
+      kind: 'Proyecto',
+    } satisfies OgProps,
+  }));
 }) satisfies GetStaticPaths;
 
 // Satori has no oklch() support, so these are hex equivalents of the
