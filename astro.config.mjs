@@ -11,7 +11,7 @@ export default defineConfig({
   // For a GitHub Pages project site, `site` is the user/org domain and `base`
   // is the repository name. Drop `base` (or set it to '/') for a custom domain
   // or a `<user>.github.io` root site.
-  site: 'https://kpab.github.io',
+  site: 'https://malaver051.github.io',
   base: '/astro-keel',
   integrations: [mdx(), sitemap()],
   markdown: {
