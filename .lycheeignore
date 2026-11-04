@@ -17,3 +17,8 @@
 # request 404s even for repositories that have stars. The README badge links
 # there and the link is fine.
 ^https://github\.com/[^/]+/[^/]+/stargazers
+
+# Repositorios privados por ahora: se enlazan desde Proyectos y se harán públicos.
+# Quitar estas líneas cuando ya sean públicos.
+^https://github\.com/malaver051/gimnasio_bd2_proyecto_final
+^https://github\.com/Medinaosp/Proyecto-SOFT-PASTY-

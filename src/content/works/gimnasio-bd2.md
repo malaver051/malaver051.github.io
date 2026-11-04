@@ -2,6 +2,7 @@
 title: Sistema de Gestión de Gimnasio
 description: Proyecto final de Bases de Datos 2. Sistema web para administrar clientes, membresías, pagos, entrenadores, rutinas y clases, con PostgreSQL como base relacional y MongoDB para los datos de estructura variable.
 tech: [PostgreSQL, MongoDB, Java, Spring Boot, React, Vite]
+repo: https://github.com/malaver051/gimnasio_bd2_proyecto_final
 order: 1
 publishDate: 2026-05-01
 ---
