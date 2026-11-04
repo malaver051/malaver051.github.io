@@ -28,7 +28,7 @@ const { title, description, categoria, tech, integrantes, archivo, fecha } = ent
         {
           archivo && (
             <a class="button" href={withBase(archivo)} download>
-              Descargar el script .sql
+              Descargar el script .{archivo.split('.').pop()}
             </a>
           )
         }
