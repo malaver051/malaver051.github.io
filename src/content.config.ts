@@ -19,4 +19,20 @@ const works = defineCollection({
     }),
 });
 
-export const collections = { works };
+// Evidencias del curso (talleres, retos), agrupadas por categoría en /evidencias/.
+const evidencias = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/evidencias' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    categoria: z.enum(['SQL', 'PL/SQL', 'NoSQL', 'Proyecto']),
+    tech: z.array(z.string()),
+    integrantes: z.array(z.string()).optional(),
+    /** Archivo descargable dentro de public/, por ejemplo `/evidencias/taller.sql`. */
+    archivo: z.string().optional(),
+    fecha: z.coerce.date().optional(),
+    order: z.number().optional(),
+  }),
+});
+
+export const collections = { works, evidencias };

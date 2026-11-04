@@ -10,3 +10,6 @@ CHANGELOG.md
 # Rewriting it as `set:html` would move the CSS out of the markup just to satisfy
 # the formatter — drop this line once the plugin handles the construct.
 src/components/Comments.astro
+
+# Scripts entregados en los talleres: se publican tal cual se entregaron.
+public/evidencias/

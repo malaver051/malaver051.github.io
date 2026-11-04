@@ -8,20 +8,21 @@ export const SITE = {
    *  `<html lang>`, date formatting, and the RSS feed language. Dictionaries
    *  ship for `en` and `ja`; regional variants like `en-GB` reuse the base
    *  language's strings while keeping their own date format. */
-  locale: 'en',
+  locale: 'es',
   /** Site name — used in the header brand, <title>, and og:site_name. */
-  title: 'Astro Keel',
+  title: 'Julian Valencia',
   /** Default meta description for pages that don't set their own. */
-  description: 'A minimal, neutral, and modern portfolio and blog theme for Astro.',
+  description:
+    'E-portafolio de Julian Valencia: avances en bases de datos SQL y NoSQL y proyectos de Ingeniería de Sistemas.',
   /** Description of the RSS feed at /rss.xml. */
-  rssDescription: 'Notes, essays, and release logs from Astro Keel.',
+  rssDescription: 'Avances y proyectos de Julian Valencia.',
   /** Default social share image, relative to the site root (see public/). */
   ogImage: '/og.jpg',
   /** Post author, emitted in JSON-LD BlogPosting structured data.
    *  Leave empty ('') to omit the author field. */
-  author: 'Astro Keel',
+  author: 'Julian Valencia',
   /** Footer credit line. */
-  footerText: 'Built with Astro Keel.',
+  footerText: 'Julian Valencia · Universidad El Bosque',
 } as const;
 
 /** Icons bundled with the theme — see `src/components/SocialLinks.astro`. */
@@ -85,7 +86,7 @@ export const GISCUS: GiscusConfig = {
   strict: true,
   reactionsEnabled: true,
   inputPosition: 'bottom',
-  lang: 'en',
+  lang: 'es',
   // Other options include `preferred_color_scheme`, `transparent_dark`,
   // `noborder_light`, `cobalt`, or a URL to your own theme CSS.
   lightTheme: 'light',
