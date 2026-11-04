@@ -11,7 +11,8 @@ publishDate: 2026-10-20
 
 GLD es una plataforma para que los gobiernos municipales atiendan a sus ciudadanos en línea: crear una cuenta, solicitar trámites, pagarlos, reportar incidencias en la vía pública y hacerles seguimiento. Cada municipio funciona como un "inquilino" separado dentro del mismo sistema. El caso está ambientado en México, así que la base trae 43 municipios con su clave del INEGI.
 
-**Equipo:** Grupo 3 · 2026-2
+- **Curso:** Proyecto Núcleo 2 · Universidad El Bosque · Ingeniería de Sistemas
+- **Equipo:** Grupo 3 · 2026-2
 
 ## Arquitectura
 

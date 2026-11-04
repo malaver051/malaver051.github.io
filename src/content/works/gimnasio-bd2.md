@@ -10,9 +10,9 @@ publishDate: 2026-05-01
 
 Un gimnasio tiene que registrar clientes, asignarles membresías, cobrar pagos, organizar entrenadores, crear rutinas e inscribir gente a clases. Cuando todo eso está suelto, cuesta saber si una membresía sigue activa, si un pago se hizo o qué rutina tiene cada cliente. Este proyecto centraliza esa información en un sistema web.
 
-**Curso:** Bases de Datos 2 · Universidad El Bosque · Ingeniería de Sistemas
-**Docente:** Christian Felipe Duarte
-**Equipo:** Julian Valencia, Kariana Rivas y Kevin Rojas
+- **Curso:** Bases de Datos 2 · Universidad El Bosque · Ingeniería de Sistemas
+- **Docente:** Christian Felipe Duarte
+- **Equipo:** Julian Valencia, Kariana Rivas y Kevin Rojas
 
 ## Arquitectura
 

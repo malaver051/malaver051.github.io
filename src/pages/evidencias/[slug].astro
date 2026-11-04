@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/url';
+import { formatDate } from '../../i18n';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('evidencias');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, categoria, tech, integrantes, archivo, fecha } = entry.data;
+---
+
+<BaseLayout {title} {description} ogType="article">
+  <article data-pagefind-body>
+    <header class="page-head section article-head">
+      <p class="eyebrow">Evidencia · {categoria}</p>
+      <h1>{title}</h1>
+      <p class="lead">{description}</p>
+      <div class="entry-meta">
+        {fecha && <time datetime={fecha.toISOString()}>{formatDate(fecha)}</time>}
+        {integrantes && <span>{integrantes.join(', ')}</span>}
+      </div>
+      <div class="action-row">
+        {
+          archivo && (
+            <a class="button" href={withBase(archivo)} download>
+              Descargar el script .sql
+            </a>
+          )
+        }
+        <a class="text-link" href={withBase('/evidencias/')}>Volver a evidencias</a>
+      </div>
+    </header>
+
+    <div class="section article-layout">
+      <aside class="article-toc">
+        <p class="eyebrow">Tecnologías</p>
+        <ul class="tech-list">
+          {tech.map((item) => <li>{item}</li>)}
+        </ul>
+      </aside>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
