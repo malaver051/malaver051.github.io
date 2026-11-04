@@ -29,12 +29,10 @@ export const es: UIStrings = {
   'home.latestWorksEyebrow': 'Últimos proyectos',
   'home.allWorks': 'Todos los proyectos',
   'home.workTech': 'Tecnología de {title}',
-  'home.worksEmpty':
-    'Agrega proyectos en <code>src/content/works</code> para mostrarlos aquí.',
+  'home.worksEmpty': 'Agrega proyectos en <code>src/content/works</code> para mostrarlos aquí.',
   'home.latestBlogEyebrow': 'Últimas notas',
   'home.allPosts': 'Todas las notas',
-  'home.postsEmpty':
-    'Agrega entradas en <code>src/content/blog</code> para mostrarlas aquí.',
+  'home.postsEmpty': 'Agrega entradas en <code>src/content/blog</code> para mostrarlas aquí.',
 
   // Blog index
   'blog.title': 'Blog',
@@ -71,7 +69,8 @@ export const es: UIStrings = {
   'comments.eyebrow': 'Comentarios',
   'comments.failed': 'No se pudieron cargar los comentarios. Lee la conversación en {link}.',
   'comments.failedLink': 'GitHub Discussions ↗',
-  'comments.noscript': 'Los comentarios necesitan JavaScript. Están alojados en GitHub Discussions.',
+  'comments.noscript':
+    'Los comentarios necesitan JavaScript. Están alojados en GitHub Discussions.',
 
   // Works
   'works.title': 'Proyectos',

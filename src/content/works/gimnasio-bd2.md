@@ -16,13 +16,13 @@ Un gimnasio tiene que registrar clientes, asignarles membresías, cobrar pagos, 
 
 ## Arquitectura
 
-| Capa | Tecnología |
-|---|---|
-| Base relacional | PostgreSQL |
-| Base NoSQL | MongoDB |
-| Backend | Java + Spring Boot (API REST) |
-| Frontend | React + Vite |
-| Servidor | Ubuntu Server en VirtualBox |
+| Capa            | Tecnología                    |
+| --------------- | ----------------------------- |
+| Base relacional | PostgreSQL                    |
+| Base NoSQL      | MongoDB                       |
+| Backend         | Java + Spring Boot (API REST) |
+| Frontend        | React + Vite                  |
+| Servidor        | Ubuntu Server en VirtualBox   |
 
 La idea es usar cada base de datos para lo que hace mejor:
 

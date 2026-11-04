@@ -17,11 +17,11 @@ GLD es una plataforma para que los gobiernos municipales atiendan a sus ciudadan
 
 Tres microservicios en **Spring Boot 3.5 con Java 21** y un frontend en **React 19 + Vite**:
 
-| Servicio | Puerto | Esquema en PostgreSQL | Qué maneja |
-|---|---|---|---|
-| `ms-identidad` | 8081 | `identidad` | Usuarios, roles, municipios, MFA y recuperación de contraseña |
-| `ms-tramites` | 8082 | `tramites` | Catálogo de trámites, requisitos, solicitudes, pagos y documentos |
-| `ms-comunidad` | 8083 | `comunidad` | Reporte de incidencias, dependencias y ubicación en mapa |
+| Servicio       | Puerto | Esquema en PostgreSQL | Qué maneja                                                        |
+| -------------- | ------ | --------------------- | ----------------------------------------------------------------- |
+| `ms-identidad` | 8081   | `identidad`           | Usuarios, roles, municipios, MFA y recuperación de contraseña     |
+| `ms-tramites`  | 8082   | `tramites`            | Catálogo de trámites, requisitos, solicitudes, pagos y documentos |
+| `ms-comunidad` | 8083   | `comunidad`           | Reporte de incidencias, dependencias y ubicación en mapa          |
 
 ## La parte de base de datos
 

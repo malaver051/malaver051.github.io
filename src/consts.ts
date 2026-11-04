@@ -12,7 +12,8 @@ export const SITE = {
   /** Site name — used in the header brand, <title>, and og:site_name. */
   title: 'Julian Valencia',
   /** Default meta description for pages that don't set their own. */
-  description: 'E-portafolio de Julian Valencia: avances en bases de datos SQL y NoSQL y proyectos de Ingeniería de Sistemas.',
+  description:
+    'E-portafolio de Julian Valencia: avances en bases de datos SQL y NoSQL y proyectos de Ingeniería de Sistemas.',
   /** Description of the RSS feed at /rss.xml. */
   rssDescription: 'Avances y proyectos de Julian Valencia.',
   /** Default social share image, relative to the site root (see public/). */
