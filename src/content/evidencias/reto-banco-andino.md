@@ -1,6 +1,7 @@
 ---
 title: Reto · Banco Andino, descuadres en transferencias
 description: Diagnóstico y corrección de la secuencia que aplica una transferencia (concurrencia, atomicidad e interbloqueos) y optimización de la consulta de un tablero gerencial con un índice.
+resumen: Diagnóstico y corrección de transferencias que perdían dinero, y un índice para acelerar el tablero gerencial.
 categoria: SQL
 tech: [Oracle, SQL, Transacciones, Índices]
 integrantes: [Julian Valencia, Joses Rodriguez]

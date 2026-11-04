@@ -7,25 +7,63 @@ const evidencias = (await getCollection('evidencias')).sort(
   (a, b) => (a.data.order ?? Number.MAX_SAFE_INTEGER) - (b.data.order ?? Number.MAX_SAFE_INTEGER),
 );
 
-// Cada categoría lista sus evidencias; `extra` enlaza trabajo que vive en Proyectos.
-const categorias = [
+interface Tarjeta {
+  tech: readonly string[];
+  title: string;
+  resumen: string;
+  href: string;
+}
+
+// Trabajo que vive en la página de Proyectos pero también es evidencia del curso.
+const gimnasioSql: Tarjeta = {
+  tech: ['PostgreSQL'],
+  title: 'Proyecto del gimnasio · Esquema y consultas',
+  resumen: 'Esquema de 13 tablas, datos semilla, consultas con JOIN y HAVING e INSERT en orden de llaves foráneas.',
+  href: '/works/gimnasio-bd2/#modelo-relacional-sql',
+};
+const gimnasio: Tarjeta = {
+  tech: ['PostgreSQL', 'MongoDB', 'Spring Boot', 'React'],
+  title: 'Sistema de Gestión de Gimnasio',
+  resumen: 'Proyecto final del curso: un sistema web que combina una base relacional y una NoSQL.',
+  href: '/works/gimnasio-bd2/',
+};
+
+const categorias: { nombre: string; descripcion: string; extras: Tarjeta[] }[] = [
   {
     nombre: 'SQL',
-    extra: {
-      texto: 'Esquema, datos semilla y consultas del proyecto del gimnasio',
-      href: '/works/gimnasio-bd2/#modelo-relacional-sql',
-    },
+    descripcion:
+      'Consultas, transacciones, concurrencia y optimización con índices en bases relacionales.',
+    extras: [gimnasioSql],
   },
-  { nombre: 'PL/SQL', extra: undefined },
-  { nombre: 'NoSQL', extra: undefined },
+  {
+    nombre: 'PL/SQL',
+    descripcion:
+      'Lógica de negocio dentro del motor: procedimientos, funciones, cursores, excepciones y disparadores.',
+    extras: [],
+  },
+  {
+    nombre: 'NoSQL',
+    descripcion: 'Bases documentales con MongoDB: consultas, agregación, escritura e índices.',
+    extras: [],
+  },
   {
     nombre: 'Proyecto',
-    extra: {
-      texto: 'Sistema de Gestión de Gimnasio, el proyecto final del curso',
-      href: '/works/gimnasio-bd2/',
-    },
+    descripcion: 'El proyecto final del semestre, donde se integra todo lo visto en el curso.',
+    extras: [gimnasio],
   },
-] as const;
+];
+
+const tarjetasDe = (nombre: string, extras: Tarjeta[]): Tarjeta[] => [
+  ...evidencias
+    .filter((e) => e.data.categoria === nombre)
+    .map((e) => ({
+      tech: e.data.tech,
+      title: e.data.title,
+      resumen: e.data.resumen ?? e.data.description,
+      href: `/evidencias/${e.id}/`,
+    })),
+  ...extras,
+];
 ---
 
 <BaseLayout
@@ -35,40 +73,69 @@ const categorias = [
   <section class="page-head section">
     <p class="eyebrow">Evidencias</p>
     <h1>Evidencias del curso</h1>
-    <p class="lead">Aquí iré publicando el trabajo del semestre, organizado por categoría.</p>
+    <p class="lead">
+      El trabajo del semestre en Bases de Datos 2, organizado por categoría. Cada taller tiene su
+      explicación y el script para descargar.
+    </p>
   </section>
 
-  <section class="section">
-    <div class="work-list">
-      {
-        categorias.map(({ nombre, extra }) => {
-          const items = evidencias.filter((e) => e.data.categoria === nombre);
-          return (
-            <article class="work-card">
-              <h2>{nombre}</h2>
-              {items.length === 0 && !extra && <p>Próximamente.</p>}
-              {items.length > 0 && (
-                <ul>
-                  {items.map((e) => (
-                    <li>
-                      <a class="text-link" href={withBase(`/evidencias/${e.id}/`)}>
-                        {e.data.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {extra && (
-                <p>
-                  <a class="text-link" href={withBase(extra.href)}>
-                    {extra.texto}
-                  </a>
-                </p>
-              )}
-            </article>
-          );
-        })
-      }
-    </div>
-  </section>
+  {
+    categorias.map(({ nombre, descripcion, extras }) => {
+      const tarjetas = tarjetasDe(nombre, extras);
+      return (
+        <section class="section categoria" aria-label={nombre}>
+          <header class="categoria-head">
+            <h2>{nombre}</h2>
+            <p>{descripcion}</p>
+          </header>
+          <div class="work-list">
+            {tarjetas.length === 0 ? (
+              <article class="work-card">
+                <p class="entry-meta">Pendiente</p>
+                <h3>Próximamente</h3>
+                <p>Aquí aparecerán los talleres de esta categoría.</p>
+              </article>
+            ) : (
+              tarjetas.map((t) => (
+                <article class="work-card">
+                  <p class="entry-meta">{t.tech.join(' / ')}</p>
+                  <h3>
+                    <a href={withBase(t.href)}>{t.title}</a>
+                  </h3>
+                  <p>{t.resumen}</p>
+                </article>
+              ))
+            )}
+          </div>
+        </section>
+      );
+    })
+  }
 </BaseLayout>
+
+<style>
+  .categoria-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .categoria-head h2 {
+    font-size: clamp(1.85rem, 4vw, 3rem);
+  }
+
+  .categoria-head p {
+    max-width: 48ch;
+    color: var(--color-muted);
+  }
+
+  .categoria .work-card {
+    min-height: 0;
+  }
+
+  .categoria .work-card h3 {
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+  }
+</style>

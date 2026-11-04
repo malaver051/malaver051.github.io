@@ -25,6 +25,8 @@ const evidencias = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    /** Resumen corto para la tarjeta en /evidencias/. Si falta se usa `description`. */
+    resumen: z.string().optional(),
     categoria: z.enum(['SQL', 'PL/SQL', 'NoSQL', 'Proyecto']),
     tech: z.array(z.string()),
     integrantes: z.array(z.string()).optional(),

@@ -1,6 +1,7 @@
 ---
 title: Taller MQL · Consultas, agregación e índices en MongoDB
-description: "Catorce ejercicios sobre la base sample_mflix: consultas con find, pipelines de agregación, escritura con $out, updateMany y deleteMany, y un índice compuesto diseñado con la regla ESR."
+description: 'Catorce ejercicios sobre la base sample_mflix: consultas con find, pipelines de agregación, escritura con $out, updateMany y deleteMany, y un índice compuesto diseñado con la regla ESR.'
+resumen: Consultas, pipelines de agregación, escritura e índices sobre la base de películas sample_mflix.
 categoria: NoSQL
 tech: [MongoDB, MQL, mongosh]
 integrantes: [Julian Valencia, Kariana Rivas, Kevin Rojas]

@@ -1,6 +1,7 @@
 ---
 title: Taller PL/SQL · Inventario y ventas
 description: Procedimientos, funciones, cursores, excepciones, disparadores y un paquete integrador sobre un esquema de inventario en Oracle, con la justificación de cada decisión de diseño.
+resumen: Procedimientos, funciones, cursores, excepciones y disparadores, integrados en un paquete de facturación.
 categoria: PL/SQL
 tech: [Oracle, PL/SQL]
 integrantes: [Julian Felipe Valencia Malaver, Kariana Rivas, Kevin Rojas]
