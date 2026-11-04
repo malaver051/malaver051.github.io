@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/url';
 ---
 
 <BaseLayout
@@ -14,10 +15,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="section">
     <div class="work-list">
-      <article class="work-card"><h2>SQL</h2><p>Próximamente.</p></article>
+      <article class="work-card">
+        <p class="entry-meta">PostgreSQL</p>
+        <h2>SQL</h2>
+        <p>
+          Esquema de 13 tablas, datos semilla y consultas con JOIN, agregación, HAVING e INSERT en
+          orden de llaves foráneas.
+          <a class="text-link" href={withBase('/works/gimnasio-bd2/#modelo-relacional-sql')}
+            >Ver en el proyecto del gimnasio</a
+          >
+        </p>
+      </article>
       <article class="work-card"><h2>PL/SQL Scripts</h2><p>Próximamente.</p></article>
       <article class="work-card"><h2>NoSQL</h2><p>Próximamente.</p></article>
-      <article class="work-card"><h2>Proyecto</h2><p>Próximamente.</p></article>
+      <article class="work-card">
+        <p class="entry-meta">PostgreSQL / MongoDB</p>
+        <h2>Proyecto</h2>
+        <p>
+          Sistema de Gestión de Gimnasio, el proyecto final del curso.
+          <a class="text-link" href={withBase('/works/gimnasio-bd2/')}>Ver proyecto</a>
+        </p>
+      </article>
     </div>
   </section>
 </BaseLayout>
